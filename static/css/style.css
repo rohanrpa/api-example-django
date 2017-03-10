@@ -1,0 +1,267 @@
+ .remove_margin{
+     margin: 0px;
+ }
+.remove_padding{
+    padding: 0px;
+}
+.sortable  td{
+    cursor: pointer;
+}
+
+
+input[type='number'] {
+ -moz-appearance:textfield; 
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+   /* display: none; <- Crashes Chrome on hover */
+   -webkit-appearance: none;
+   margin: 0;
+   }
+
+body{
+    background-color: #d8dde3;
+}
+.header-container{
+    background-color: #272b36;
+}
+.custom-dropdown-menu{
+    width:220px;
+}
+ .navbar-nav>li>a.user-name:focus,
+ .navbar-nav>li>a.user-name:hover{
+     background-color: transparent;
+ }
+ .content{
+     float: left;
+     width: 100%;
+     list-style: none;
+     padding: 20px 0px;
+ }
+ .polling,.mandal,.constituency{
+    padding:30px 20px;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+     color: #ffffff;
+     font-size: 24px;
+     margin: 10px 0;
+ }
+ .polling{
+     background-color: #259dab;
+ }
+ .mandal{
+     background-color: #d9544f;
+ }
+ .constituency{
+     background-color: #505b71;
+ }
+ .polling:hover,.mandal:hover,.constituency:hover {
+     -webkit-box-shadow:1px 0px 2px 1px rgba(50, 50, 50, 0.75);
+     -moz-box-shadow: 1px 0px 2px 1px rgba(50, 50, 50, 0.75);
+     box-shadow: 1px 0px 2px 1px rgba(50, 50, 50, 0.75);
+ }
+ .polling span,.mandal span,.constituency span{
+     padding: 7px 0;
+     position: relative;
+ }
+
+
+.col-sm-2-state {
+    float: right;
+   
+}
+ .search_polling{
+     width: 50%;
+     padding:15px 20px;
+     margin: auto;
+     background: #fff;
+     border-radius: 10px;
+     border-top: 3px solid #259dab;
+ }
+ .search_polling h4{
+     font-size: 14px;
+     font-weight: bold;
+     margin-top: 0px;
+     color: #303843;
+ }
+
+ .search_polling p{
+     font-size:12px;
+     font-weight: normal;
+     color: #696d76;
+ }
+ .select_custame{
+     display: flex;
+ }
+ .search_polling .dropdown-menu.inner.selectpicker{
+     position: relative;
+     width:100%;
+
+ }
+ .search_polling .selectpicker.dropdown-menu>.active>a{
+ background-color: #259dab;
+ }
+
+
+
+ .search_button {
+     display: flex;
+     font-size: 12px;
+     color: #fff;
+     background: #259dab;
+     border: none;
+     padding: 5px 8px;
+     width: 82px;
+ }
+.search_button span{
+    padding: 3px;
+    float: left;
+}
+ .search_polling .bootstrap-select,.search_polling .bootstrap-select button{
+     width:100%;
+     padding-right: 20px;
+ }
+ .search_polling .caret{
+     float: right;
+     margin-top: 10px;
+ }
+ .search_polling .dropdown-menu.open{
+     min-width:100% !important;
+ }
+ /*.search_polling .dropdown-menu.open .glyphicon{
+     display: none;
+}*/
+
+ .multi-search{
+     background-color: #ffffff;
+     border-radius: 5px;
+     padding: 15px;
+     margin-top: 30px;
+ }
+ .multi-search input{
+     margin-bottom: 10px;
+     margin-right: 4px;
+     width: 19.6%;
+     display: inline-block;
+ }
+.multi-search .submit{
+    float: right;
+    margin-right: 6px;
+}
+.list-tiems{
+    margin-top: 20px;
+    background: #ffffff;
+    border-radius: 5px;
+    padding: 0;
+
+}
+ ul.form-list {
+     padding-top: 15px;
+     list-style: none;
+     float: left;
+     width: 100%;
+ }
+ ul.form-list li{
+     margin-bottom: 10px;
+ }
+
+ ul.form-list li span:first-child{
+     text-align: right;
+     width: 200px;
+     display: inline-block;
+     font-size: 12px;
+     font-weight: 600;
+ }
+ ul.form-list li span:last-child{
+     padding-left: 15px;
+     font-size: 12px;
+     font-weight: 400;
+ }
+.list-tiems h1{
+    margin: 0px;
+    font-size: 18px;
+    color: #ffffff;
+    font-weight: 600;
+    background-color:#259dab;
+    padding: 10px;
+    border-radius: 5px;
+}
+ .data-table {
+     background: #ffffff;
+     padding: 20px;
+     float: left;
+     width: 100%;
+ }
+ .data-table-scroll{
+     background: #ffffff;
+     padding: 20px;
+     float: left;
+     overflow-x: auto;
+     width: 100%;
+     padding-bottom: 0;
+ }
+ .data-table-scroll tr th{
+       font-size: 12px;
+       background-color: #d8dde3;
+
+   }
+ .data-table-scroll tr th:nth-child(odd){
+     background-color:#e4e7ec;
+ }
+
+ .data-table-scroll tr td{
+     font-size: 12px;
+     background-color: #f0f1f5;
+
+ }
+ .data-table-scroll tr td:nth-child(odd){
+     background-color:#f6f7f9;
+ }
+ .red .search_polling{
+    border-top:3px solid #d9544f;
+ }
+.red .search_button,
+.red .list-tiems h1{
+    background: #d9544f;
+}
+
+
+ .black .search_polling{
+    border-top:3px solid #505b71;
+ }
+.black .search_button,
+.black .list-tiems h1{
+    background: #505b71;
+}
+/*.search_criteria,.list-tiems,.data-table{
+    display: none;
+}*/
+
+ @media screen and (max-width:1024px) {
+     .polling, .mandal, .constituency {
+         font-size: 18px;
+         margin: 10px 0;
+     }
+
+ }
+ @media screen and (max-width:1024px) {
+     .search_polling {
+         width:100%;
+     }
+     .form-list{
+         padding:0;
+     }
+     ul.form-list li span:first-child{
+         width:115px;
+     }
+.data-table>.data-table{
+    padding:0px;
+}
+     .text-search {
+         width: 50%;
+     }
+     .text-search input{
+         width: 50%;
+     }
+ }

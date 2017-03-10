@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block content %}
+<style>
+#regiration_form fieldset:not(:first-of-type) {
+    display: none;
+  }
+</style>
+<nav class="navbar-inverse header-container" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{% url 'home_view' %}">DOCTOR RX</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+
+            <ul class="nav navbar-nav navbar-right">
+
+                <li class="dropdown">
+                    {% if user %}
+						
+					    <a href="/" class="dropdown-toggle" data-toggle="dropdown">Log Out<span class="caret"></span></a>
+					{% else %}
+						<a href="{% url 'social:begin' 'drchrono' %}" class="dropdown-toggle" data-toggle="dropdown">Log In<span class="caret"></span></a>
+					{% endif %}
+                   
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div class="container">
+		<div class="progress" style="margin-top:30px">
+    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+  </div>
+  <form id="regiration_form" novalidate action="action.php"  method="post">
+  <fieldset>
+    <h2>Step 1: Check-in Details</h2>
+    <div class="form-group">
+    <label for="email">First Name</label>
+    <input type="text" class="form-control" id="fname" name="fname" placeholder="First Name">
+    </div>
+    <div class="form-group">
+    <label for="exampleInputPassword1">Last Name</label>
+    <input type="text" class="form-control" name="lname" id="lname" placeholder="Last Name">
+    </div>
+	  <div class="form-group">
+    <label for="exampleInputPassword1">DOB</label>
+    <input type="text" class="form-control" name="dob" id="dob" placeholder="DOB">
+    </div>
+    <input type="button" name="password" id="step1_next" class="next btn btn-info" value="Next" />
+  </fieldset>
+  <fieldset>
+    <h2> Step 2: Confirm Appointment</h2>
+    <div class="form-group">
+    <label for="fName">First Name</label>
+    <input type="text" class="form-control" name="fName" id="fName" placeholder="First Name">
+    </div>
+    <div class="form-group">
+    <label for="lName">Last Name</label>
+    <input type="text" class="form-control" name="lName" id="lName" placeholder="Last Name">
+    </div>
+    <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
+    <input type="button" name="next" class="next btn btn-info" value="Next" />
+  </fieldset>
+  <fieldset>
+    <h2>Step 3: Update Demographics</h2>
+    <div class="form-group">
+    <label for="mob">Mobile Number</label>
+    <input type="text" class="form-control" id="mob" placeholder="Mobile Number">
+    </div>
+    <div class="form-group">
+    <label for="address">Address</label>
+    <textarea  class="form-control" name="address" placeholder="Communication Address"></textarea>
+    </div>
+    <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
+    <input type="submit" name="submit" class="submit btn btn-success" value="Submit" />
+  </fieldset>
+  </form>
+          
+    </div>
+</div>
+{% endblock content %}

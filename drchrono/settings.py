@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '=*l&a&rk7jmiw$3euke*z9lu-na!^j^i&ddejfik!ajqlaymmc'
+SECRET_KEY = 'l-(dbgl6a@qf5^ly@gwy!q5clzqzvnh9qir8r6z*uqq$51ibe$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -37,7 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'drchrono',
+    'myapp',
     'social.apps.django_app.default',
 )
 
@@ -52,17 +52,12 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.security.SecurityMiddleware',
 )
 
-AUTHENTICATION_BACKENDS = (
-    'social_auth_drchrono.backends.drchronoOAuth2',
-    'django.contrib.auth.backends.ModelBackend',
-)
-
 ROOT_URLCONF = 'drchrono.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates').replace('\\','/'),],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -70,8 +65,6 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'social.apps.django_app.context_processors.backends',
-                'social.apps.django_app.context_processors.login_redirect',
             ],
         },
     },
@@ -89,6 +82,20 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+AUTHENTICATION_BACKENDS = (
+    'social_auth_drchrono.backends.drchronoOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+SOCIAL_AUTH_DRCHRONO_KEY = 'L95OXcF67OGOyv1Zi1E6NiEIJ8bo9CtkEsXwfOoo'
+SOCIAL_AUTH_DRCHRONO_SECRET = '34UhokIOQoBBMqJ785z5nXWvSmTILlh6EYUhS31McUxxlabQg9jGTMa8E5bQ5x0fapPTArCqsZf8HRJhk5p36YgSLZd1sm85Lf4BIoVaJJPe7S8DhaQAek6xQgzc4PPz'
+
+# We'll leave this blank so all scopes are requested (default)
+SOCIAL_AUTH_DRCHRONO_SCOPE = ['patients:read']
+
+LOGIN_REDIRECT_URL = '/Home'
+LOGIN_URL = '/'
 
 
 # Internationalization
@@ -109,3 +116,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+    '/var/www/static/',
+]
