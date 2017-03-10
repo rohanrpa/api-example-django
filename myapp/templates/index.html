@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block content %}
+<nav class="navbar-inverse header-container" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">DOCTOR Rx</a>
+        </div>
+        
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div class="container">
+        <ul class="content">
+            <a  ><li class="col-sm-12 col-xs-12">
+				<div class="polling"><span>DOCTOR Rx </br>*POWERED BY DRCHRONO</span></div>
+            </li></a>
+
+            <a href="{% url 'social:begin' 'drchrono' %}"><li class="col-sm-12 col-xs-12">
+				<div class="mandal"><span>PLEASE LOGIN WITH DRCHRONO TO CONTINUE</br><button class="btn" style="background-color: grey">LOGIN</button></span></div>
+            </li></a>
+
+            
+        </ul>
+		<div id="div1"></div>
+		
+        
+  
+         </div>
+</div>
+{% endblock content %}

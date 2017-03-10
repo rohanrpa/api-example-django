@@ -1,0 +1,9 @@
+{
+    "web": {
+        "client_id": "L95OXcF67OGOyv1Zi1E6NiEIJ8bo9CtkEsXwfOoo",
+        "client_secret": "34UhokIOQoBBMqJ785z5nXWvSmTILlh6EYUhS31McUxxlabQg9jGTMa8E5bQ5x0fapPTArCqsZf8HRJhk5p36YgSLZd1sm85Lf4BIoVaJJPe7S8DhaQAek6xQgzc4PPz",
+        "redirect_uris": ["http://127.0.0.1:8000/birthday/auth_return/"],
+        "auth_uri": "https://drchrono.com/o/authorize/",
+        "token_uri": "https://drchrono.com/o/token/"
+    }
+}
