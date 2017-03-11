@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block content %}
+<style>
+.leftsaidbox{}
+.leftsaidbuttons{width: 100%;height: auto; float: left; background:#008abb; padding: 8px 0; font-size: 15px; text-align: center; color: #fff; font-weight: bold; margin: 10px 0;}
+</style>
+<nav class="navbar-inverse header-container" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{% url 'home_view' %}">DOCTOR Rx</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+
+            <ul class="nav navbar-nav navbar-right">
+
+                <li class="dropdown">
+                    {% if user %}
+						
+					    <a href="/logout" class="dropdown-toggle">LOGOUT<span class="caret"></span></a>
+					{% else %}
+						<a href="{% url 'social:begin' 'drchrono' %}" class="dropdown-toggle" data-toggle="dropdown">Log In<span class="caret"></span></a>
+					{% endif %}
+                   
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="row">
+    <div class="container-fluid">
+        <div class="col-md-2">
+        <button type="buton" onclick="getappointments('Confirmed');" class="leftsaidbuttons">Today's Appointments</button>
+        <button type="buton" onclick="getappointments('Arrived');" class="leftsaidbuttons">Checked-In</button>
+        <button type="buton" onclick="getappointments('In Session');" class="leftsaidbuttons">In Session</button>
+        <button type="buton" onclick="appointments();" class="leftsaidbuttons">Daily Logs</button>
+        </div>
+        <div class="col-md-10" id="resp_data">
+        
+		</div>
+		
+		<div class="container">
+        <ul class="content">
+            <li class="col-sm-6 col-xs-12">
+				<div class="polling"><span>Average Waiting Time</br><span id="mins"></span> min <span id="secs"></span> sec</span></div>
+            </li>
+	</ul>
+</div>
+    </div>
+</div>
+{% csrf_token %}
+<div style="clear:both"></div>
+
+
+
+{% endblock content %}
+
+
