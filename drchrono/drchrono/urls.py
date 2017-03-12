@@ -28,7 +28,6 @@ urlpatterns = [
 	url(r'^doctorappointments$', DoctorAppointmentView.as_view(), name='doctor_appointment'),
 	url(r'^getdoctordetails$', getdoctordetails, name='getdoctordetails'),	
 	url(r'^getappointment$', AppointmentView.as_view(), name='appointment_view'),
-    # url(r'^getpatients$', getpatients, name='getpatients'),
 	url(r'^logout$', logout, name='logout'),
 	url(r'^appointment/(?P<app_id>[0-9]+)/$', appointment_detail ),
 	url(r'^appointments$', appointment_all ),

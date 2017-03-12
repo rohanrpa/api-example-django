@@ -131,7 +131,6 @@ def getdoctordetails(request):
 	try:
 		doctor = Doctor.objects.get(doctor_id=request.session['doc_id'])
 		num_patients = Appointment.objects.exclude(start_time__isnull=True)
-		print len(num_patients)
 
 	except Doctor.DoesNotExist:
 		return HttpResponse(status=404)
@@ -139,7 +138,7 @@ def getdoctordetails(request):
 	if request.method == 'GET':
 		serializer = DoctorSerializer(doctor)
 		ans = serializer.data
-		if lem(num_patients) != 0:
+		if len(num_patients) != 0:
 			ans["count"] = len(num_patients)
 		else:
 			ans["count"] = 1
@@ -169,13 +168,11 @@ def appointment_all(request):
 		return HttpResponse(html)
 
 def get_time(request,app_id):
-	print app_id
 	appointment = Appointment.objects.get(app_id=app_id)
 	now = datetime.now()
 	appointment.start_time = now
 	dur = getDuration(str(now),str(appointment.time_of_arrival))
 	appointment.wait_time = dur
-	print dur
 	return HttpResponse(dur) 
 
 def logout(request):
